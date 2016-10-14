@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<head>
+  <style>
+    body{
+      margin: 0;
+      height: 100%;
+    }
+    #animate {
+      width: 100%;
+      height: 600px;
+      position: fixed;
+      bottom: -550px;
+      
+      color: #fafafa;
+      font-family: 'Helvetica-Neue', Helvetica, sans-serif;
+      font-weight: 100;
+      font-size: 3em;
+      letter-spacing: 0.5em;
+      align-items: center;
+      display: flex;
+      
+      background: linear-gradient(#E2E380, #D68EBD, #8D97BD, #67B094);
+      transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    #animate:hover {
+      bottom: 0;
+    }
+    #animate p{
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="animate">
+    <p>DESIGN</p>
+  </div>
+</body>

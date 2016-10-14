@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<head>
+  <style>
+    body{
+      margin: 0;
+    }
+    .container{
+      margin: auto;
+      position: relative;
+      height: 700px;
+      width: 500px;
+      /*border: 1px solid gray;*/
+      overflow-y: hidden;
+    }
+    .list{
+      overflow-y: scroll;
+      height: 100%;
+
+      color: #444;
+      font-family: 'Helvetica-Neue', Helvetica;
+      font-size: calc(1em + 3vw);
+      text-align: center;
+      font-weight: 100;
+    }
+    .blur{
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      transition: opacity 0.2s;
+    }
+    .top{
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(0,0,0,0));
+      top: 0;
+      opacity: 0;
+    }
+    .bottom{
+      /*background: linear-gradient(rgba(236,234,228,0), rgba(236,234,228,0.1),rgba(236,234,228,0.3));*/
+      background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1),rgba(0,0,0,0.3));
+      bottom: 0;
+    }
+  </style>
+  <script>
+    function checkScroll(){
+      var scroll = document.querySelector('.list').scrollTop;
+      var topbar = document.querySelector('.top');
+      var botbar = document.querySelector('.bottom');
+      var maxHeight = document.querySelector('.list').clientHeight;
+      //var maxHeight = 676;
+
+      if (scroll == 0) topbar.style.opacity = '0';
+      if (scroll>0) topbar.style.opacity = '1';
+      if (scroll < maxHeight) botbar.style.opacity = '1';
+      if (scroll >= maxHeight) botbar.style.opacity = '0';
+      console.log(maxHeight, scroll)
+
+    }
+    //document.addEventListener('scroll', () => );
+  </script>
+</head>
+<body>
+
+  <div class='container'>
+    <div class="blur top"></div>
+    <div class="list" onscroll="checkScroll()">
+
+      <div style='height: 1500px;background:#ddd'></div>
+
+    </div>
+    <div class="blur bottom"></div>
+  </div>
+</body>
