@@ -1,29 +1,81 @@
 <!DOCTYPE HTML>
 <head>
   <style>
+  
     body{
       margin: 0;
+      background: #D8D8D8;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
-    div{
-      float: left;
-      height: 770px;
-      width: 50%;
-      color: #C9C9C9;
-      font-family: 'Helvetica-Neue', Helvetica;
-      font-size: calc(1em + 3vw);
+    
+    .container{
+      display: flex;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    .elements{
       text-align: center;
-      padding-top: 250px;
-      font-weight: 100;
-      -webkit-transition: background-color 0.3s;
-      transition: background-color 0.3s;
+      width: 100%;
+    }
+    
+    .element{
+      width: 45vw;
+      max-width: 200px;
+      min-height: 2em;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
       
+      background-color: #444;
+      transition: background-color 200ms;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin: 20px;
+      
+      color: #fafafa;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 200;
+      text-transform: uppercase;
     }
-    div:hover{
-      background-color: #1BA5FB;
+
+    .element:hover{
+      /*background-color: #DA8787;*/
+      /*background-color: #8787DA;*/
+      background-color: #4487DA;
     }
+    
+    .element:active{
+      transform: translateY(2px);
+      box-shadow: 2px 0px 1px rgba(0,0,0,0.5);
+    }
+    
   </style>
 </head>
 <body>
-  <div>Click me!</div>
-  <div>No, click ME!</div>
+  <div class="container">
+    <div class="elements">
+      <div class="element" onclick=window.open('./animate.html')>
+        <p>animate</p>
+      </div>
+      <div class="element" onclick=window.open('./chose.html')>
+        <p>chose</p>
+      </div>
+      <div class="element" onclick=window.open('./scroll.html')>
+        <p>scroll</p>
+      </div>
+      <div class="element" onclick=window.open('./verbs.html')>
+        <p>verbs</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    
+  </script>
 </body>
