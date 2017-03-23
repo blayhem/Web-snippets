@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<head>
+    <style>
+        .battery-container{
+            margin: 50px;
+            border: 10px solid #555;
+            border-radius: 10px;
+            height: 80px;
+            width: 200px;
+        }
+        .battery{
+            height: 100%;
+            background-color: #0FA;
+            animation: charge 2s;
+            animation-name: charge;
+            animation-duration: 2s;
+            -webkit-animation: charge 4s infinite linear;
+        }
+        .charge-icon{
+            height: 60px;
+            position: relative;
+            bottom: 70px;
+            left: 70px;
+        }
+        .charge-icon path{
+            animation: hid 4s infinite linear;
+            -webkit-animation: hid 4s infinite linear;
+        }
+        
+        @keyframes hid {
+            48%{ fill: #444; }
+            
+            50%{ fill: transparent; }
+
+            98%{ fill: transparent; }
+        }
+        
+        @keyframes charge {
+            0% {  width: 0%; background-color: #F44; }
+
+            10% { width: 0%; background-color: #F44; }
+            
+            15% { background-color: #F44; }
+         
+            20% { width: 25%; background-color: #0FA; }
+            
+            30% { width: 50%; }
+         
+            40% { width: 75%; }
+            
+            50% { width: 100%; }
+            
+            60% { width: 100%; }
+            
+            70% { width: 75%; }
+            
+            80% { width: 50%; }
+            
+            90% { width: 25%; background-color: #0FA; }
+            
+            95%{ background-color: #F44; }
+         
+            100% { width: 0%; background-color: #F44; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="battery-container">
+        <div class="battery">
+        </div>
+        <svg class="charge-icon" xmlns:dc="http://purl.org/dc/elements/1.1" xmlns:cc="http://creativecommons.org/ns#/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 79.001 100" xml:space="preserve" x="0px" y="0px">
+            <path d="M 30.720839,0.30508476 L 69.280161,0.40348861 L 44.280161,35.474577 L 68.432703,35.474577 L 10.381856,99.881352 L 31.144568,55.389831 L 8.686941,55.389831 z" style="" fill="#555" fill-opacity="1" stroke="none"></path>
+        </svg>
+    </div>
+</body>
